@@ -1,0 +1,1 @@
+export {useAddressIpDetails} from './useAddressIpDetails';

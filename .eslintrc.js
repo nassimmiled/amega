@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  extends: '@react-native',
   settings: {
     react: {
       version: 'detect',
@@ -10,7 +11,13 @@ module.exports = {
     amd: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   parser: '@typescript-eslint/parser',
   plugins: ['simple-import-sort', 'import'],
   rules: {

@@ -1,13 +1,33 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
-  plugins: ['simple-import-sort', 'import'],
-  rules: {
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
-    'import/no-duplicates': 'error',
-    'import/newline-after-import': 'error',
-    'import/first': 'error',
-    'no-console': 'error',
-  },
+  presets: ['module:metro-react-native-babel-preset'],
+  overrides: [
+    {
+      plugins: [
+        [
+          '@babel/plugin-transform-private-methods',
+          {
+            loose: true,
+          },
+        ],
+      ],
+    },
+  ],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          '~/themes': './src/themes',
+          '~/assets': './src/assets',
+          '~/screens': './src/screens',
+          '~/hooks': './src/hooks',
+          '~/navigations': './src/navigations',
+          '~/constants': './src/constants',
+          '~/components': './src/components',
+          '~/types': './src/types',
+        },
+      },
+    ],
+  ],
 };
