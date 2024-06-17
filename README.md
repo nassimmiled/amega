@@ -115,7 +115,8 @@ To launch the project on an Android device or emulator, follow these steps:
    - Make sure you have the Android emulator running or an Android device connected.
    - Run the following command to start the app on Android:
 
-     ```yarn run android
+     ```
+     yarn run android
 
      ```
 
