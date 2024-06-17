@@ -14,6 +14,10 @@ export const ProfileScreen = () => {
 
   const {image, addressDetails} = route?.params || {};
 
+  if (!image) {
+    return;
+  }
+
   return (
     <View>
       <Image source={image} resizeMode="cover" style={styles.image} />

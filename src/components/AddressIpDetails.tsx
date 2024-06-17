@@ -9,7 +9,7 @@ const {colors, spacing} = theme;
 
 interface IAddressIpDetails {
   data?: [IAddressIp];
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 const AddressIpItem = ({label, value}: IAddressIp) => {
