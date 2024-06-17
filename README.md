@@ -1,79 +1,122 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Project Documentation
 
-# Getting Started
+`Amega Test Case`
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Table of Contents
 
-## Step 1: Start the Metro Server
+1. [Project Structure](#project-structure)
+   - [Assets](#assets)
+   - [Components](#components)
+   - [Constants](#constants)
+   - [Hooks](#hooks)
+   - [Navigations](#navigations)
+   - [Screens](#screens)
+   - [Themes](#themes)
+   - [Types](#types)
+2. [Setup and Installation](#setup-and-installation)
+3. [Launching the Project](#launching-the-project)
+   - [Android](#android)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Project Structure
 
-To start Metro, run the following command from the _root_ of your React Native project:
+The project is organized into several directories, each serving a specific purpose. Below is an overview of each directory and its role in the project.
 
-```bash
-# using npm
-npm start
+### Assets
 
-# OR using Yarn
+The `assets` directory contains all the static assets such as images, fonts, and other resources used in the application.
+
+### Components
+
+The `components` directory includes reusable UI components that are used across the application. Each component should have its own folder containing the component file, styles, and any associated tests.
+
+### Constants
+
+The `constants` directory holds constant values and configurations that are used throughout the application, such as API endpoints, action types, or static data.
+
+### Hooks
+
+The `hooks` directory contains custom React hooks that encapsulate reusable logic. These hooks can be used to manage state, side effects, or any reusable logic that needs to be shared across components.
+
+### Navigations
+
+The `navigations` directory manages the navigation structure of the application. It typically includes the navigation stack, tab navigators, and any navigation-related configurations.
+
+### Screens
+
+The `screens` directory includes all the different screens (or pages) of the application. Each screen typically corresponds to a different view or route in the application.
+
+### Themes
+
+The `themes` directory contains the styling and theming configurations for the application. This can include color schemes, typography, and other design-related settings.
+
+### Types
+
+The `types` directory holds TypeScript type definitions and interfaces used throughout the application. This helps in maintaining type safety and improving code quality.
+
+## Setup and Installation
+
+Provide detailed instructions on how to set up and install the project. Include prerequisites, installation steps, and any other necessary configurations.
+
+```sh
+# Clone the repository
+git clone <https://github.com/nassimmiled/amega>
+
+# Navigate to the project directory
+cd <amega>
+
+# Install dependencies
+yarn install
+
+# Start the application
 yarn start
 ```
 
-## Step 2: Start your Application
+## Launching the Project
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Android
 
-### For Android
+To launch the project on an Android device or emulator, follow these steps:
 
-```bash
-# using npm
-npm run android
+1. **Install Android Studio**: Download and install [Android Studio](https://developer.android.com/studio) and make sure you have the latest Android SDK and emulator installed.
 
-# OR using Yarn
-yarn android
-```
+2. **Install Java Development Kit (JDK)**:
 
-### For iOS
+   - Ensure that you have the correct version of the JDK installed. React Native typically requires JDK 8 or JDK 11.
+   - You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or use a package manager like `brew` on macOS:
+     ```sh
+     brew install openjdk@11
+     ```
+   - After installation, set the `JAVA_HOME` environment variable to the JDK path. Add the following lines to your `~/.bash_profile`, `~/.zprofile`, or `~/.bashrc` file (macOS/Linux):
+     ```sh
+     export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+     export PATH=$JAVA_HOME/bin:$PATH
+     ```
 
-```bash
-# using npm
-npm run ios
+3. **Set Up Your Android Environment Variables**:
 
-# OR using Yarn
-yarn ios
-```
+   - **MacOS/Linux**: Add the following lines to your `~/.bash_profile`, `~/.zprofile`, or `~/.bashrc` file:
+     ```sh
+     export ANDROID_HOME=$HOME/Library/Android/sdk
+     export PATH=$PATH:$ANDROID_HOME/emulator
+     export PATH=$PATH:$ANDROID_HOME/tools
+     export PATH=$PATH:$ANDROID_HOME/tools/bin
+     export PATH=$PATH:$ANDROID_HOME/platform-tools
+     ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+4. **Start the Android Emulator**:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   - Open Android Studio.
+   - Go to `AVD Manager` (found in the toolbar or under `Tools` > `AVD Manager`).
+   - Create and start a virtual device.
 
-## Step 3: Modifying your App
+5. **Run the Project**:
 
-Now that you have successfully run the app, let's modify it.
+   - Open a terminal in your project directory.
+   - Make sure you have the Android emulator running or an Android device connected.
+   - Run the following command to start the app on Android:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+     ```yarn run android
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+     ```
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This will build the application and install it on the connected Android device or emulator.
